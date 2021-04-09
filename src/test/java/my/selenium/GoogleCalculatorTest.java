@@ -28,7 +28,7 @@ public class GoogleCalculatorTest {
     }
 
     @Test
-    public void testCorrectMathOperations() {
+    public void correct_Math_Operations_Test() {
         ResultPageWithCalculator calculatorPage = mainPage.findCalculator();
         calculatorPage.inputCalcText("(1 + 2) * 3 - 40 / 5");
         Assert.assertEquals("(1 + 2) × 3 - 40 ÷ 5 =", calculatorPage.getMemoryText());
@@ -36,7 +36,7 @@ public class GoogleCalculatorTest {
     }
 
     @Test
-    public void testZeroDevide() {
+    public void zero_Divide_Test() {
         ResultPageWithCalculator calculatorPage = mainPage.findCalculator();
         calculatorPage.inputCalcText("6 / 0");
         Assert.assertEquals("6 ÷ 0 =", calculatorPage.getMemoryText());
@@ -44,7 +44,7 @@ public class GoogleCalculatorTest {
     }
 
     @Test
-    public void testIncorrectSin() {
+    public void incorrect_Sin_Test() {
         ResultPageWithCalculator calculatorPage = mainPage.findCalculator();
         calculatorPage.inputCalcText("sin");
         Assert.assertEquals("sin() =", calculatorPage.getMemoryText());
