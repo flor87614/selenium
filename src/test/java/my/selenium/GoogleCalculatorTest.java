@@ -2,26 +2,27 @@ package my.selenium;
 
 import my.selenium.com.google.pages.MainPage;
 import my.selenium.com.google.pages.ResultPageWithCalculator;
-import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.*;
 
 import java.util.concurrent.TimeUnit;
 
 public class GoogleCalculatorTest {
-    private static WebDriver driver;
+    private WebDriver driver;
     private MainPage mainPage;
 
     @BeforeClass
-    public static void init() {
-        System.setProperty("webdriver.chrome.driver", "/usr/local/bin/chromedriver");
+    public void init() {
+        System.setProperty("webdriver.chrome.driver", "C:/Users/Ann/chromedriver/chromedriver.exe");
 
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
     }
 
-    @Before
+    @BeforeMethod
     public void setUp() {
         mainPage = new MainPage(driver);
         driver.get("http://google.com");
@@ -52,7 +53,7 @@ public class GoogleCalculatorTest {
     }
 
     @AfterClass
-    public static void finish() {
+    public void finish() {
         driver.close();
     }
 }

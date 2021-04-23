@@ -1,0 +1,7 @@
+<suite name="suite">
+    <test name="test suite">
+        <classes>
+            <class name="ru.yandex.mail.YandexMailTest" />
+        </classes>
+    </test>
+</suite>
